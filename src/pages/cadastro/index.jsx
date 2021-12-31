@@ -1,5 +1,6 @@
-import axios from "../services/api";
+import axios from "../../services/api";
 import { useState } from 'react';
+import './form.css';
 
 export default function Form () {
 
@@ -28,7 +29,9 @@ export default function Form () {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+        <div className="form-container">
+
+            <form className="form" onSubmit={handleSubmit}>
                 <label htmlFor="titulo">titulo: </label>
                 <input id="titulo" type="text" name="titulo" onChange={handleChange} /><br />
                 <label htmlFor="editora">editora: </label>
@@ -37,6 +40,7 @@ export default function Form () {
                 <input id="foto" type="text" name="foto" onChange={handleChange} /><br />
             <button>submit dados</button>
             </form>
+        </div>
         </>
     )
 }
