@@ -32,14 +32,18 @@ export default function Form () {
         <div className="form-container">
 
             <form className="form" onSubmit={handleSubmit}>
-                <label htmlFor="titulo">titulo: </label>
+                <label htmlFor="titulo">Titulo: </label>
                 <input id="titulo" type="text" name="titulo" onChange={handleChange} /><br />
-                <label htmlFor="editora">editora: </label>
+                <label htmlFor="editora">Editora: </label>
                 <input id="editora" type="text" name="editora" onChange={handleChange} /><br />
-                <label htmlFor="foto">foto: </label>
+                <label htmlFor="foto">Foto: </label>
                 <input id="foto" type="text" name="foto" onChange={handleChange} /><br />
             <button>submit dados</button>
             </form>
+            <section>
+            <h1>Biblio-tech</h1>
+            <h3>A biblioteca mais tech do Brasil</h3>
+            </section>
         </div>
         </>
     )

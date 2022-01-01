@@ -1,3 +1,6 @@
+# Paleta de cores
+<img src="./src/assets/paleta.jpeg"/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
