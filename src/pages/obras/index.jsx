@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import api from '../../services/api'
-import List from './components/list'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import api from '../../services/api';
+import List from '../../components/list';
+import './obra.css';
 
 export default function Dados() {
-
-
     const [form, setForm] = useState([]);
-
-    
 
     useEffect(() => {
         async function loadDados() {
             try {
                 var response = await api.get('/obra')
                 setForm(response.data);
-                console.log(response.data);
             } catch (error) {
                 alert(error)
             }
@@ -32,9 +29,10 @@ export default function Dados() {
     return (
         <>
             <h1>Lista de Obra</h1>
-            <ul>
+            <Link to="/">Cadastre uma obra</Link>
+            <div className="container-cards">
                 {form && mostrarDados()}
-            </ul>
+            </div>
 
         </>
     )
