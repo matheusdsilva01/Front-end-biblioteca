@@ -54,20 +54,20 @@ export default function Form() {
 
     return (
         <>
-            <Link to="/obras">Ver obras cadastradas</Link>
             <div className="form-container">
                 <form className="form" onSubmit={handleSubmit}>
-                    <label htmlFor="titulo">Titulo: </label>
+                    <label className="label" htmlFor="titulo">Titulo: </label>
                     <input id="titulo" type="text" name="titulo" onChange={handleChange} /><br />
-                    <label htmlFor="editora">Editora: </label>
+                    <label className="label" htmlFor="editora">Editora: </label>
                     <input id="editora" type="text" name="editora" onChange={handleChange} /><br />
-                    <label htmlFor="foto">Foto: </label>
+                    <label  className="label" htmlFor="foto">Foto: </label>
                     <input id="foto" type="text" name="foto" onChange={handleChange} /><br />
-                    <button >submit dados</button>
+                    <button>submit dados</button>
                 </form>
                 <section>
                     <h1>Biblio-tech</h1>
                     <h3>A biblioteca mais tech do Brasil</h3>
+                    <Link to="/obras"><button> Ver obras cadastradas</button></Link>
                 </section>
             </div>
         </>

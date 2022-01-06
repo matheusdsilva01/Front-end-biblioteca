@@ -1,5 +1,5 @@
 import React from 'react'
-import './list.css'
+import './card.css'
 
 export default function List({id, titulo, editora, foto}) {
     return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
-import List from '../../components/list';
+import Card from '../../components/card';
 import './obra.css';
 
 export default function Dados() {
@@ -21,7 +21,7 @@ export default function Dados() {
 
     function mostrarDados() {
         return form.map(dados => (
-            <List key={dados.id} id={dados.id} titulo={dados.titulo} editora={dados.editora} foto={dados.foto} />
+            <Card key={dados.id} id={dados.id} titulo={dados.titulo} editora={dados.editora} foto={dados.foto} />
         ))
     }
     
