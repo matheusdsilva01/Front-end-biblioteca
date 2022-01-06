@@ -24,12 +24,18 @@ export default function Dados() {
             <Card key={dados.id} id={dados.id} titulo={dados.titulo} editora={dados.editora} foto={dados.foto} />
         ))
     }
-    
+
 
     return (
         <>
-            <h1>Lista de Obra</h1>
-            <Link to="/">Cadastre uma obra</Link>
+            <div className='container' >
+                <h1>Lista de Obra</h1>
+                <Link to="/">
+                    <button className='btn-router'>
+                        Cadastrar uma obra
+                    </button>
+                </Link>
+            </div>
             <div className="container-cards">
                 {form && mostrarDados()}
             </div>
