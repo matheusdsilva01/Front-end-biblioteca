@@ -1,5 +1,9 @@
-body{
-    background-image: url("../../assets/img/armario.jpg");
+.container-obra{
+    background-image: url("../../assets/backgroud's/armario.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 .container{
     display: flex;
@@ -11,7 +15,5 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    flex-grow: 1;
     margin-top: 20px;
-    height: 100vh;
 }
