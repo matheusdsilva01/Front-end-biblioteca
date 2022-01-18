@@ -53,7 +53,7 @@ export default function Form() {
 
 
     return (
-        <>
+        <div className="cadastro-container">
             <div className="form-container">
                 <form className="form" onSubmit={handleSubmit}>
                     <label className="label" htmlFor="titulo">Titulo: </label>
@@ -74,6 +74,6 @@ export default function Form() {
                     </Link>
                 </section>
             </div>
-        </>
+        </div>
     )
 }

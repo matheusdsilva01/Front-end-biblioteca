@@ -27,11 +27,11 @@ export default function Dados() {
 
 
     return (
-        <>
-            <div className='container' >
+        <div className="container-obra">
+            <div className="container" >
                 <h1>Lista de Obra</h1>
                 <Link to="/">
-                    <button className='btn-router'>
+                    <button className="btn-router">
                         Cadastrar uma obra
                     </button>
                 </Link>
@@ -39,7 +39,6 @@ export default function Dados() {
             <div className="container-cards">
                 {form && mostrarDados()}
             </div>
-
-        </>
+        </div>
     )
 }

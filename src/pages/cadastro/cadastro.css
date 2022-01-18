@@ -1,5 +1,9 @@
-body{
-  background-image: url("../../assets/fundo.svg");
+.cadastro-container{
+    background-image: url("../../assets/backgroud's/fundo.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 .form-container {
     width: 100%;
