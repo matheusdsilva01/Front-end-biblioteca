@@ -28,17 +28,17 @@ export default function Dados() {
 
     return (
         <div className="container-obra">
-            <div className="container" >
-                <h1>Lista de Obra</h1>
+            <section className="container" >
+                <h1>Lista de Obras</h1>
                 <Link to="/">
                     <button className="btn-router">
                         Cadastrar uma obra
                     </button>
                 </Link>
-            </div>
-            <div className="container-cards">
+            </section>
+            <section className="container-cards">
                 {form && mostrarDados()}
-            </div>
+            </section>
         </div>
     )
 }

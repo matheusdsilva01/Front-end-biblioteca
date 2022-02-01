@@ -1,9 +1,9 @@
-.container-obra{
-    background-image: url("../../assets/backgroud's/armario.jpg");
+body{
+    background-image: url("../../assets/backgroud's/armario.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     background-attachment: fixed;
+    background-position: center;
 }
 .container{
     display: flex;
@@ -14,6 +14,7 @@
 .container-cards{
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-around;
     margin-top: 20px;
 }
