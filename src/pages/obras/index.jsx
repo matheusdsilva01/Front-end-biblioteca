@@ -6,18 +6,17 @@ import './obra.css';
 
 export default function Dados() {
     const [form, setForm] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function loadDados() {
-            try {
-                var response = await api.get('/obra')
-                setForm(response.data);
-            } catch (error) {
-                alert(error)
-            }
-        }
-        loadDados();
+        api.get('/obra').then(response => {
+            setForm(response.data);
+        }).catch(error => (
+            alert(error)
+        ))
+        setLoading(false)
     }, []);
+
 
     function mostrarDados() {
         return form.map(dados => (
@@ -30,6 +29,9 @@ export default function Dados() {
         <div className="container-obra">
             <section className="container" >
                 <h1>Lista de Obras</h1>
+                {form.length === 0 & !loading ? (
+                    <h2>Ops, parece que não temos obras cadastradas, volte a pagina principal e cadastre uma obra!</h2>
+                ) : null}
                 <Link to="/">
                     <button className="btn-router">
                         Cadastrar uma obra
