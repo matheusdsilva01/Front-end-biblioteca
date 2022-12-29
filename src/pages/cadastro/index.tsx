@@ -1,42 +1,41 @@
-import axios from "../../services/api";
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './cadastro.css';
+import { ChangeEvent, FormEvent, useState } from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import data from "util/data";
 
-export default function Form() {
+import "./cadastro.css";
 
-    var inputs = document.querySelectorAll('input');
+const Form = () => {
     const [form, setForm] = useState({
         titulo: "",
         editora: "",
         foto: ""
     });
 
-    function handleChange(event) {
+    function handleChange(event: ChangeEvent<HTMLInputElement>) {
         const { name, value } = event.target;
         setForm({ ...form, [name]: value });
         console.log(form)
     }
 
-    function handleSubmit(event) {
+    function handleSubmit(event: FormEvent) {
         event.preventDefault();
         if (verification()) {
-            axios.post('/obra', form);
             Swal.fire({
-                title: 'Cadastro realizado com sucesso!',
-                text: 'Você será redirecionado para a página de login',
-                icon: 'success'
+                title: "Cadastro realizado com sucesso!",
+                text: "Você será redirecionado para a página de login",
+                icon: "success"
             })
+            data.push(form)
             resetInputs();
         }
     }
 
     const verification = () => {
-        if (form.titulo === '' || form.editora === '' || form.foto === '') {
+        if (form.titulo === "" || form.editora === "" || form.foto === "") {
             Swal.fire({
-                title: 'Prencha os campos corretamente',
-                icon: 'error'
+                title: "Prencha os campos corretamente",
+                icon: "error"
             })
             return false
         } else {
@@ -45,9 +44,11 @@ export default function Form() {
     }
 
     const resetInputs = () => {
-        inputs.forEach(input => {
-            input.value = '';
-        });
+        setForm({
+            titulo: "",
+            editora: "",
+            foto: ""
+        })
     }
 
 
@@ -57,11 +58,11 @@ export default function Form() {
             <div className="form-container">
                 <form className="form" onSubmit={handleSubmit}>
                     <label className="label" htmlFor="titulo">Titulo: </label>
-                    <input id="titulo" type="text" name="titulo" onChange={handleChange} /><br />
+                    <input id="titulo" value={form.titulo} type="text" name="titulo" onChange={handleChange} /><br />
                     <label className="label" htmlFor="editora">Editora: </label>
-                    <input id="editora" type="text" name="editora" onChange={handleChange} /><br />
+                    <input id="editora" value={form.editora} type="text" name="editora" onChange={handleChange} /><br />
                     <label className="label" htmlFor="foto">Foto: </label>
-                    <input id="foto" type="text" name="foto" onChange={handleChange} /><br />
+                    <input id="foto" value={form.foto} type="text" name="foto" onChange={handleChange} /><br />
                     <button>Cadastrar obras</button>
                 </form>
                 <section>
@@ -77,3 +78,4 @@ export default function Form() {
         </div>
     )
 }
+export default Form;
